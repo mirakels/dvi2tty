@@ -1,4 +1,15 @@
 /******************************************************************************
+ * Takuji Tanaka: 20160305 (ttk@t-lab.opal.ne.jp)
+ *               Version 6.0.0
+ *               Supported T1,TS1,OT2,T2A,T2B,T2C,X2 encodings.
+ *               Added utf8 output for the latin, cyrillic encodings and
+ *               OML,OMS encodings.
+ *               Added option -C not to compose a combining character sequence.
+ * Takuji Tanaka: 20111119 (KXD02663@nifty.ne.jp)
+ *               Used ptexenc library for Japanese TeX.
+ *               Enabled UTF8 output for Japanese TeX with option -Eu.
+ *               Added upTeX DVI support with option -U.
+ *               Added auto detected Japanese fonts in japanese-otf package.
  * Marcel Mol: 20101113  (marcel@mesa.nl)
  *               Version 5.3.4
  *               Fix VERSION code
@@ -145,15 +156,5 @@
  *  Edit: Svante Lindahl
  *
  * dvitty - get an ascii representation of a dvi-file, suitable for ttys
- *
- * This program, and any documentation for it, is copyrighted by Svante
- * Lindahl. It may be copied for non-commercial use only, provided that
- * any and all copyright notices are preserved.
- *
- *
- * UUCP: {seismo,mcvax,cernvax,diku,ukc,unido}!enea!ttds!zap
- * ARPA: enea!ttds!zap@seismo.CSS.GOV
- *  or   Svante_Lindahl_NADA%QZCOM.MAILNET@MIT-MULTICS.ARPA
- * EAN:  zap@cs.kth.sunet
  */
 

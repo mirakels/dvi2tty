@@ -18,32 +18,36 @@
  *
  */
 
-#define VERSION "5.3.4"
+#define VERSION "6.0.0"
 
-#define Copyright "dvi2tty  Copyright (C) 1984, 1985, 1986 Svante Lindahl.\n\
+#define Progname "dvi2tty"
+#define Copyright "Copyright (C) 1984, 1985, 1986 Svante Lindahl.\n\
 Copyright (C) 1989-2010 M.J.E. Mol, MESA Consulting B.V."
 
-
-#include <stdio.h>
-#include <string.h>
-#include <stdlib.h>
-#if defined(MSDOS)
-# include <malloc.h>
-#else
-# if !defined(THINK_C)
-#  include <unistd.h>
-# endif
-#endif
 
 #if defined(KPATHSEA)
 # define NO_DEBUG 1
 # include <kpathsea/config.h>
 # include <kpathsea/readable.h>
+#if defined(WIN32)
+# include <kpathsea/variable.h>
+#endif
 # include <sys/types.h>
 # include <sys/stat.h>
 #else
 # define TRUE        1
 # define FALSE       0
+#endif
+
+#include <stdio.h>
+#include <string.h>
+#include <stdlib.h>
+#if defined(MSDOS) || (defined(WIN32) && !defined(__MINGW32__))
+# include <malloc.h>
+#else
+# if !defined(THINK_C)
+#  include <unistd.h>
+# endif
 #endif
 
 #define nil         NULL
@@ -53,6 +57,18 @@ Copyright (C) 1989-2010 M.J.E. Mol, MESA Consulting B.V."
  * (this is also used to define the with of the line structure in dvistuff.c)
  */
 #define MAXTERMWIDTH	332
+
+#include <ptexenc/ptexenc.h>
+#include <ptexenc/unicode.h>
+
+/* internal encoding for NTT JTeX : "euc" */
+#define JTEX_INTERNAL_ENC  "euc"
+
+/* internal encoding for ASCII pTeX : "euc" or "sjis" */
+#define PTEX_INTERNAL_ENC  "euc"
+
+/* internal encoding for upTeX : "uptex" */
+#define UPTEX_INTERNAL_ENC  "uptex"
 
 /*
  * ERROR CODES , don't start with 0
@@ -107,14 +123,19 @@ extern bool   pageswitchon;            /* user-set pages to print(dvistuff.c)*/
 extern bool   sequenceon;              /* not TeX pagenrs (dvistuff.c)       */
 extern bool   scascii;                 /* Scand. nat. chars (dvistuff.c)     */
 extern bool   latin1;                  /* latin1 chars (dvistuff.c)          */
+extern bool   utf8;                    /* print by utf8 encoding (dvistuff.c) */
+extern bool   noligaturefi;            /* do not use ligature for ff,fi,fl,ffi,ffl (dvistuff.c) */
 extern bool   accent;                  /* Output accent stuff(dvistuff.c)    */
 extern bool   ttfont;                  /* tt font assumed   (dvistuff.c)     */
-extern bool   japan;                   /* NTT jTeX font support (dvistuff.c) */
+extern bool   jautodetect;             /* Autodetect NTT jTeX, ASCII pTeX and upTeX (dvistuff.c) */
+extern bool   nttj;                    /* NTT jTeX font support (dvistuff.c) */
 extern bool   asciip;                  /* ASCII pTeX font support (dvistuff.c) */
-extern bool   jautodetect;             /* Autodetect NTT jTex and ASCII pTeX (dvistuff.c) */
+extern bool   uptex;                   /* upTeX font support (dvistuff.c)    */
+extern bool   japan;                   /* japanized TeX font support (dvistuff.c) */
 extern bool   noffd;                   /* output ^L or formfeed (dvistuff.c) */
 extern bool   printfont;               /* include font switches (dvistuff.c) */
-extern bool   allchar;                 /* output all characters (dvistuff.c  */
+extern bool   compose;                 /* try to compose a combining character sequence (dvistuff.c) */
+extern bool   allchar;                 /* output all characters (dvistuff.c) */
 
 extern printlisttype *currentpage;     /* current page to print (dvi2tty.c)  */
 extern printlisttype *firstpage;       /* first page selected (dvi2tty.c)    */

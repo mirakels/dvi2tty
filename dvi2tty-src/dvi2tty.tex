@@ -177,9 +177,13 @@ terminal into this mode as output will probably look somewhat better.
 \item[{{\bf -l}}]
 Mark page breaks with the two-character sequence ``\^{}L''. The default is
 to mark them with a form feed character.
+\item[{{\bf -a}}]
+Remove accents grave etc. from output.
 \item[{{\bf -c}}]
 Do not attempt to trnaslate any characters (like the Scandinavion mode)
 except when running in tt-font.
+\item[{{\bf -C}}]
+Do not attempt to compose a combining character sequence.
 \item[{{\bf -bdelim}}]
 Print the name of fonts when switching to it (and ending it). The delim
 argument is used to delimit the fontname.
@@ -192,11 +196,17 @@ Toggle option to process the special Scandinavian characters that on most (?)
 terminals in Scandinavia are mapped to ``\{$|$\}[\bs ]''.
 Note this may interfere with -u. Best not to use -u and -s together.
 \item[{{\bf -J}}]
-Auto detect NTT JTeX and ASCII pTeX dvi format.
+Auto detect NTT JTeX, ASCII pTeX, and upTeX dvi format.
 \item[{{\bf -N}}]
 Display NTT JTeX dvi.
 \item[{{\bf -A}}]
 Display ASCII pTeX dvi.
+\item[{{\bf -U}}]
+Display upTeX dvi.
+\item[{{\bf -Eenc}}]
+Set output multibyte encoding. The enc argument 'e', 's', 'j', 'u', and 'u1'
+denotes EUC-JP, Shift\_JIS, ISO-2022-JP, UTF-8,
+and UTF-8 (do not use ligature for ff, fi, fl, ffi, ffl), respectively.
 \end{list}
 %
 %	NOTE --- No other files are used under VMS.
