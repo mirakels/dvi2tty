@@ -7,10 +7,10 @@ The present version was translated in C language from original one in Pascal.
 
 ### Contents
 
-* ./README.md          : This file
-* ./dvi2tty-src/README : More detailed README
-* ./                   : environment for TeX Live distribution
-* ./dvi2tty-src/       : set of source files (submitted to CTAN)
+* ./README.md                              : This file
+* ./source/                                : environment for TeX Live distribution
+* ./source/texk/dvi2tty/dvi2tty-src/README : More detailed README
+* ./source/texk/dvi2tty/dvi2tty-src/       : set of source files (submitted to CTAN)
 
 
 ### License
