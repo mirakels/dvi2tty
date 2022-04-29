@@ -56,19 +56,14 @@ const char *disdvi = "@(#) disdvi.c  2.26 20101027 M.J.E. Mol (c) 1989-2010, mar
 
 #include <stdio.h>
 #include <stdlib.h>
-#if defined(MSDOS) || defined(WIN32)
+#if defined(WIN32)
 # include <fcntl.h>
 #else
-# if !defined(THINK_C)          /* Macintosh */
 # include <unistd.h>
-# endif
 #endif
 #include <ctype.h>
 #include <string.h>
 #include "commands.h"
-#if defined(THINK_C)
-# include "macintosh.h"
-#endif
 #if defined(WIN32) && defined(KPATHSEA)
 #undef fopen
 #define fopen fsyscp_fopen
@@ -123,9 +118,6 @@ const char * dvi_ext = ".dvi";
  * Function declarations
  */
 
-#if defined(VMS)
-                main            (int argc, char ** argv);
-#endif
 void            bop             (void);
 void            preamble        (void);
 void            postamble       (void);
@@ -150,11 +142,7 @@ void            invalid         (int opcode);
  * MAIN --
  */
 
-#if defined(VMS)
-     main(int argc, char **argv)
-#else
 int main(int argc, char **argv)
-#endif
 {
     register int opcode;                /* dvi opcode */
     register int i;
@@ -170,10 +158,6 @@ int main(int argc, char **argv)
         argc = ac;
     }
     _setmode (fileno(stdout), _O_BINARY);
-#endif
-
-#if defined(THINK_C)
-    argc = process_disdvi_command_line(&argv);
 #endif
 
     progname = *argv++;
@@ -227,7 +211,7 @@ int main(int argc, char **argv)
     else
         dvifp = stdin;
 
-#if defined(MSDOS) || defined(WIN32)
+#if defined(WIN32)
     setmode(fileno(dvifp), _O_BINARY);
 #endif
 
@@ -361,10 +345,10 @@ void bop(void)
     for (i=9; i > 0; i--) {
         if (i % 3 == 0)
             printf("\n%06ld:         ", pc);
-        printf("  %6ld", sget4()); 
+        printf("  %6ld", sget4());
     }
     printf("\n%06ld: ", pc);
-    printf("          prev page offset : %06ld\n", sget4()); 
+    printf("          prev page offset : %06ld\n", sget4());
 
     return;
 
@@ -376,7 +360,7 @@ void bop(void)
  * POSTAMBLE -- Process post amble.
  */
 
-void postamble(void) 
+void postamble(void)
 {
 
     printf("POST      last page offset : %06ld\n", sget4());
@@ -518,7 +502,7 @@ void fontdef(int x)
         perror("fontdef");
         exit(1);
     }
-    
+
     for (i = 0; i < namelen; i++)
         name[i] = get1();
     name[i] = '\0';
@@ -551,7 +535,7 @@ const char * fontname(unsigned long fntnum)
         return fnt->name;
 
     return "unknown fontname";
-   
+
 } /* fontname */
 
 
@@ -743,7 +727,7 @@ void natfontdef(int opcode)
         perror("fontdef");
         exit(1);
     }
-    
+
     for (i = 0; i < namelen; i++)
         name[i] = get1();
     name[namelen] = '\0';
