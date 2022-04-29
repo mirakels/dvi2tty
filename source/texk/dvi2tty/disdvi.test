@@ -5,8 +5,9 @@
 # You may freely use, modify and/or distribute this file.
 
 test_src=$srcdir/$DVI2TTY_TREE/test
+test_out=$srcdir/output
 
 ./disdvi $test_src/ligtest >ligtest.dout \
-	&& diff $srcdir/ligtest.dis ligtest.dout \
+	&& diff $test_out/ligtest.dis ligtest.dout \
 	|| exit 1
 
