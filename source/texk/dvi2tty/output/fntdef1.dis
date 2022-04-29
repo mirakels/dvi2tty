@@ -1,0 +1,252 @@
+000000: PRE       version          : 2
+000002:           numerator        : 25400000
+000006:           denominator      : 473628672
+000010:           magnification    : 1000
+000014:           job name ( 27)   : TeX output 2022.03.17:2207
+000042: FNT_DEF1: 7
+000044:           checksum         : 1274110073
+000048:           scale            : 655360
+000052:           design           : 655360
+000056:           name             : cmr10
+000063: FNT_DEF1: 24
+000065:           checksum         : 452076118
+000069:           scale            : 655360
+000073:           design           : 655360
+000077:           name             : cmbx10
+000085: FNT_DEF1: 25
+000087:           checksum         : 4244645690
+000091:           scale            : 655360
+000095:           design           : 655360
+000099:           name             : cmti10
+000107: FNT_DEF1: 26
+000109:           checksum         : 1890463818
+000113:           scale            : 655360
+000117:           design           : 655360
+000121:           name             : cmsl10
+000129: BOP       page number      : 1
+000134:                0       0       0
+000146:                0       0       0
+000158:                0       0       0
+000170:           prev page offset : -00001
+000174: XXX1:     31 bytes
+000176: papersize=614.295pt,794.96999pt
+000207: DOWN4:    41484288
+000212: PUSH
+000213: DOWN4:    -39649280
+000218: PUSH
+000219: PUSH
+000220: RIGHT3:   4063232
+000224: XXX1:     17 bytes
+000226: color push  Black
+000243: RIGHT4:   22609920
+000248: XXX1:     9 bytes
+000250: color pop
+000259: POP
+000260: POP
+000261: DOWN4:    37683200
+000266: PUSH
+000267: RIGHT3:   4063232
+000271: DOWN4:    -36044800
+000276: XXX1:     26 bytes
+000278: header=l3backend-dvips.pro
+000304: DOWN3:    655360
+000308: PUSH
+000309: RIGHT3:   983040
+000313: FONT_07              /* cmr10 */
+000314: Char:     fi         /* ligature (non-printing) 0x0C */
+000315: Char:     rst
+000318: RIGHT3:   218453
+000322: Char:     page.
+000327: POP
+000328: POP
+000329: DOWN3:    1966080
+000333: PUSH
+000334: RIGHT3:   4063232
+000338: XXX1:     17 bytes
+000340: color push  Black
+000357: PUSH
+000358: RIGHT4:   11141120
+000363: Char:     1
+000364: POP
+000365: RIGHT4:   22609920
+000370: XXX1:     9 bytes
+000372: color pop
+000381: POP
+000382: POP
+000383: EOP
+000384: BOP       page number      : 2
+000389:                0       0       0
+000401:                0       0       0
+000413:                0       0       0
+000425:           prev page offset : 000129
+000429: DOWN4:    41484288
+000434: PUSH
+000435: DOWN4:    -39649280
+000440: PUSH
+000441: PUSH
+000442: RIGHT3:   4063232
+000446: XXX1:     17 bytes
+000448: color push  Black
+000465: RIGHT4:   22609920
+000470: XXX1:     9 bytes
+000472: color pop
+000481: POP
+000482: POP
+000483: DOWN4:    37683200
+000488: PUSH
+000489: DOWN4:    -35389440
+000494: PUSH
+000495: RIGHT3:   5046272
+000499: FONT_24              /* cmbx10 */
+000500: Char:     second
+000506: RIGHT3:   251220
+000510: Char:     page.
+000515: POP
+000516: POP
+000517: DOWN3:    1966080
+000521: PUSH
+000522: RIGHT3:   4063232
+000526: XXX1:     17 bytes
+000528: color push  Black
+000545: PUSH
+000546: RIGHT4:   11141120
+000551: FONT_07              /* cmr10 */
+000552: Char:     2
+000553: POP
+000554: RIGHT4:   22609920
+000559: XXX1:     9 bytes
+000561: color pop
+000570: POP
+000571: POP
+000572: EOP
+000573: BOP       page number      : 3
+000578:                0       0       0
+000590:                0       0       0
+000602:                0       0       0
+000614:           prev page offset : 000384
+000618: DOWN4:    41484288
+000623: PUSH
+000624: DOWN4:    -39649280
+000629: PUSH
+000630: PUSH
+000631: RIGHT3:   4063232
+000635: XXX1:     17 bytes
+000637: color push  Black
+000654: RIGHT4:   22609920
+000659: XXX1:     9 bytes
+000661: color pop
+000670: POP
+000671: POP
+000672: DOWN4:    37683200
+000677: PUSH
+000678: DOWN4:    -35389440
+000683: PUSH
+000684: RIGHT3:   5046272
+000688: FONT_25              /* cmti10 */
+000689: Char:     thir
+000693: W3:       -33497
+000697: Char:     d
+000698: RIGHT3:   234471
+000702: Char:     p
+000703: W0
+000704: Char:     age.
+000708: POP
+000709: POP
+000710: DOWN3:    1966080
+000714: PUSH
+000715: RIGHT3:   4063232
+000719: XXX1:     17 bytes
+000721: color push  Black
+000738: PUSH
+000739: RIGHT4:   11141120
+000744: FONT_07              /* cmr10 */
+000745: Char:     3
+000746: POP
+000747: RIGHT4:   22609920
+000752: XXX1:     9 bytes
+000754: color pop
+000763: POP
+000764: POP
+000765: EOP
+000766: BOP       page number      : 4
+000771:                0       0       0
+000783:                0       0       0
+000795:                0       0       0
+000807:           prev page offset : 000573
+000811: DOWN4:    41484288
+000816: PUSH
+000817: DOWN4:    -39649280
+000822: PUSH
+000823: PUSH
+000824: RIGHT3:   4063232
+000828: XXX1:     17 bytes
+000830: color push  Black
+000847: RIGHT4:   22609920
+000852: XXX1:     9 bytes
+000854: color pop
+000863: POP
+000864: POP
+000865: DOWN4:    37683200
+000870: PUSH
+000871: DOWN4:    -35389440
+000876: PUSH
+000877: RIGHT3:   5046272
+000881: FONT_26              /* cmsl10 */
+000882: Char:     fourth
+000888: RIGHT3:   218453
+000892: Char:     page.
+000897: POP
+000898: POP
+000899: DOWN3:    1966080
+000903: PUSH
+000904: RIGHT3:   4063232
+000908: XXX1:     17 bytes
+000910: color push  Black
+000927: PUSH
+000928: RIGHT4:   11141120
+000933: FONT_07              /* cmr10 */
+000934: Char:     4
+000935: POP
+000936: RIGHT4:   22609920
+000941: XXX1:     9 bytes
+000943: color pop
+000952: POP
+000953: POP
+000954: EOP
+000955: POST      last page offset : 000766
+000960:           numerator        : 25400000
+000964:           denominator      : 473628672
+000968:           magnification    : 1000
+000972:           max page height  : 41484288
+000976:           max page width   : 26673152
+000980:           stack size needed: 3
+000982:           number of pages  : 4
+000984: FNT_DEF1: 26
+000986:           checksum         : 1890463818
+000990:           scale            : 655360
+000994:           design           : 655360
+000998:           name             : cmsl10
+001006: FNT_DEF1: 25
+001008:           checksum         : 4244645690
+001012:           scale            : 655360
+001016:           design           : 655360
+001020:           name             : cmti10
+001028: FNT_DEF1: 24
+001030:           checksum         : 452076118
+001034:           scale            : 655360
+001038:           design           : 655360
+001042:           name             : cmbx10
+001050: FNT_DEF1: 7
+001052:           checksum         : 1274110073
+001056:           scale            : 655360
+001060:           design           : 655360
+001064:           name             : cmr10
+001071: POSTPOST  postamble offset : 000955
+001076:           version          : 2
+001077: TRAILER
+001078: TRAILER
+001079: TRAILER
+001080: TRAILER
+001081: TRAILER
+001082: TRAILER
+001083: TRAILER
