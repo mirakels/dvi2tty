@@ -116,7 +116,7 @@ PROGRAMS = $(bin_PROGRAMS)
 am__dirstamp = $(am__leading_dot)dirstamp
 am_disdvi_OBJECTS = @DVI2TTY_TREE@/disdvi.$(OBJEXT)
 disdvi_OBJECTS = $(am_disdvi_OBJECTS)
-disdvi_LDADD = $(LDADD)
+disdvi_LDADD = $(PTEXENC_LIBS) $(LDADD)
 am__DEPENDENCIES_1 =
 disdvi_DEPENDENCIES = $(am__DEPENDENCIES_1)
 AM_V_lt = $(am__v_lt_@AM_V@)
@@ -567,7 +567,7 @@ NEVER_DIST = `find . $(NEVER_NAMES)`
 NEVER_NAMES = -name .svn $(NEVER_NAMES_SUB)
 NEVER_NAMES_SUB = -o -name .deps -o -name .dirstamp -o -name '*.$(OBJEXT)'
 NEVER_NAMES_LT = -o -name .libs -o -name '*.lo'
-AM_CPPFLAGS = $(PTEXENC_INCLUDES) $(KPATHSEA_INCLUDES) -DKPATHSEA
+AM_CPPFLAGS = $(PTEXENC_INCLUDES) $(KPATHSEA_INCLUDES) -DKPATHSEA -DPTEXENC
 AM_CFLAGS = $(WARNING_CFLAGS)
 LDADD = $(KPATHSEA_LIBS)
 disdvi_SOURCES = \
@@ -1344,7 +1344,7 @@ uninstall-man: uninstall-man1
 dist-hook:
 	cd "$(distdir)" && rm -rf $(NEVER_DIST)
 
-$(disdvi_OBJECTS): $(KPATHSEA_DEPEND)
+$(disdvi_OBJECTS): $(KPATHSEA_DEPEND) $(PTEXENC_DEPEND)
 
 $(dvi2tty_OBJECTS): $(KPATHSEA_DEPEND) $(PTEXENC_DEPEND)
 
