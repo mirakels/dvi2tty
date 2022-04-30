@@ -18,29 +18,10 @@ rc=0
 	&& diff $test_out/ptex1.dis ptex1.dout || rc=2
 ./disdvi $test_src/uptex1.dvi >uptex1.dout \
 	&& diff $test_out/uptex1.dis uptex1.dout || rc=3
-./disdvi -p $test_src/ptex2.dvi >ptex2.dout \
-	&& diff $test_out/ptex2.dis ptex2.dout || rc=4
-./disdvi -p $test_src/uptex2.dvi >uptex2.dout \
-	&& diff $test_out/uptex2.dis uptex2.dout || rc=5
-./disdvi -p -Ee $test_src/ptex2.dvi >ptex2Ee.dout \
-	&& diff $test_out/ptex2Ee.dis ptex2Ee.dout || rc=6
-./disdvi -p -Es $test_src/ptex2.dvi >ptex2Es.dout \
-	&& diff $test_out/ptex2Es.dis ptex2Es.dout || rc=7
-./disdvi -p -Ej $test_src/ptex2.dvi >ptex2Ej.dout \
-	&& diff $test_out/ptex2Ej.dis ptex2Ej.dout || rc=8
 ./disdvi -p -Eu $test_src/ptex2.dvi >ptex2Eu.dout \
 	&& diff $test_out/ptex2Eu.dis ptex2Eu.dout || rc=9
 ./disdvi -u -Eu $test_src/uptex2.dvi >uptex2Eu.dout \
 	&& diff $test_out/uptex2Eu.dis uptex2Eu.dout || rc=10
-
-./disdvi $test_src/fntdef0.dvi >fntdef0.dout \
-	&& diff $test_out/fntdef0.dis fntdef0.dout || rc=20
-./disdvi $test_src/fntdef1.dvi >fntdef1.dout \
-	&& diff $test_out/fntdef1.dis fntdef1.dout || rc=21
-./disdvi $test_src/fntdef2.dvi >fntdef2.dout \
-	&& diff $test_out/fntdef2.dis fntdef2.dout || rc=22
-./disdvi $test_src/fntdef3.dvi >fntdef3.dout \
-	&& diff $test_out/fntdef3.dis fntdef3.dout || rc=23
 
 
 exit $rc

@@ -19,62 +19,35 @@ rc=0
 ./dvi2tty -Eu $test_src/test.dvi >testEu.out && diff $test_out/testEu.tty testEu.out || rc=6
 
 
-./dvi2tty $test_src/ligtest >ligtest.out && diff $test_out/ligtest.tty ligtest.out || rc=1
-./dvi2tty -u $test_src/ligtest >ligtestu.out && diff $test_out/ligtestu.tty ligtestu.out || rc=4
-./dvi2tty -Eu $test_src/ligtest >ligtestEu.out && diff $test_out/ligtestEu.tty ligtestEu.out || rc=6
+./dvi2tty $test_src/ligtest >ligtest.out && diff $test_out/ligtest.tty ligtest.out || rc=11
+./dvi2tty -u $test_src/ligtest >ligtestu.out && diff $test_out/ligtestu.tty ligtestu.out || rc=14
+./dvi2tty -Eu $test_src/ligtest >ligtestEu.out && diff $test_out/ligtestEu.tty ligtestEu.out || rc=16
 
 
-./dvi2tty $test_src/table.dvi >table.out && diff $test_out/table.tty table.out || rc=1
-./dvi2tty -c $test_src/table.dvi >tablec.out && diff $test_out/tablec.tty tablec.out || rc=2
-./dvi2tty -s $test_src/table.dvi >tables.out && diff $test_out/tables.tty tables.out || rc=3
-./dvi2tty -u $test_src/table.dvi >tableu.out && diff $test_out/tableu.tty tableu.out || rc=4
-./dvi2tty -u -C $test_src/table.dvi >tableuC.out && diff $test_out/tableuC.tty tableuC.out || rc=5
-./dvi2tty -Eu $test_src/table.dvi >tableEu.out && diff $test_out/tableEu.tty tableEu.out || rc=6
-./dvi2tty -Eu1 $test_src/table.dvi >tableEu1.out && diff $test_out/tableEu1.tty tableEu1.out || rc=7
-./dvi2tty -Eu -C $test_src/table.dvi >tableEuC.out && diff $test_out/tableEuC.tty tableEuC.out || rc=8
-./dvi2tty -Eu -a $test_src/table.dvi >tableEua.out && diff $test_out/tableEua.tty tableEua.out || rc=9
-./dvi2tty -l $test_src/table.dvi >tablel.out && diff $test_out/tablel.tty tablel.out || rc=10
-./dvi2tty -q $test_src/table.dvi >tableq.out && diff $test_out/tableq.tty tableq.out || rc=11
-./dvi2tty -a $test_src/table.dvi >tablea.out && diff $test_out/tablea.tty tablea.out || rc=12
-./dvi2tty -t $test_src/table.dvi >tablet.out && diff $test_out/tablet.tty tablet.out || rc=13
-./dvi2tty -b! $test_src/table.dvi >tableb.out && diff $test_out/tableb.tty tableb.out || rc=14
-./dvi2tty -e 10 $test_src/table.dvi >tablee+10.out && diff $test_out/tablee+10.tty tablee+10.out || rc=15
-./dvi2tty -e -10 $test_src/table.dvi >tablee-10.out && diff $test_out/tablee-10.tty tablee-10.out || rc=16
-./dvi2tty -F cat $test_src/table.dvi >tableF.out && diff $test_out/table.tty tableF.out || rc=17
-./dvi2tty -p 2 $test_src/table.dvi >tablep2.out && diff $test_out/tablep2.tty tablep2.out || rc=18
-./dvi2tty -p 4 $test_src/table.dvi >tablep4.out && diff $test_out/tablep4.tty tablep4.out || rc=19
-./dvi2tty -p 2,4 $test_src/table.dvi >tablep24.out && diff $test_out/tablep24.tty tablep24.out || rc=20
-./dvi2tty -P 2 $test_src/table.dvi >tableP2.out && diff $test_out/tablep2.tty tableP2.out || rc=21
-./dvi2tty -P 4 $test_src/table.dvi >tableP4.out && diff $test_out/tablep4.tty tableP4.out || rc=22
-./dvi2tty -P 2,4 $test_src/table.dvi >tableP24.out && diff $test_out/tablep24.tty tableP24.out || rc=23
-./dvi2tty -w 90 $test_src/table.dvi >tablew.out && diff $test_out/tablew.tty tablew.out || rc=24
-./dvi2tty -v 500000 $test_src/table.dvi >tablev.out && diff $test_out/tablev.tty tablev.out || rc=25
+./dvi2tty $test_src/table.dvi >table.out && diff $test_out/table.tty table.out || rc=21
+./dvi2tty -c $test_src/table.dvi >tablec.out && diff $test_out/tablec.tty tablec.out || rc=22
+./dvi2tty -s $test_src/table.dvi >tables.out && diff $test_out/tables.tty tables.out || rc=23
+./dvi2tty -u $test_src/table.dvi >tableu.out && diff $test_out/tableu.tty tableu.out || rc=24
+./dvi2tty -u -C $test_src/table.dvi >tableuC.out && diff $test_out/tableuC.tty tableuC.out || rc=25
+./dvi2tty -Eu $test_src/table.dvi >tableEu.out && diff $test_out/tableEu.tty tableEu.out || rc=26
+./dvi2tty -Eu1 $test_src/table.dvi >tableEu1.out && diff $test_out/tableEu1.tty tableEu1.out || rc=27
+./dvi2tty -Eu -C $test_src/table.dvi >tableEuC.out && diff $test_out/tableEuC.tty tableEuC.out || rc=28
+./dvi2tty -Eu -a $test_src/table.dvi >tableEua.out && diff $test_out/tableEua.tty tableEua.out || rc=29
 
 
 ## CJK by pTeX / upTeX
-./dvi2tty -A -Ej -w100 -o ptex1Ej.out $test_src/ptex1.dvi && diff $test_out/ptex1Ej.tty ptex1Ej.out || rc=1
-./dvi2tty -A -Ee -w100 -o ptex1Ee.out $test_src/ptex1.dvi && diff $test_out/ptex1Ee.tty ptex1Ee.out || rc=2
-./dvi2tty -A -Es -w100 -o ptex1Es.out $test_src/ptex1.dvi && diff $test_out/ptex1Es.tty ptex1Es.out || rc=3
-./dvi2tty -A -Eu -w100 -o ptex1Eu.out $test_src/ptex1.dvi && diff $test_out/ptex1Eu.tty ptex1Eu.out || rc=4
-./dvi2tty -J -Eu -w100 -o ptex1EuJ.out $test_src/ptex1.dvi  && diff $test_out/ptex1Eu.tty ptex1EuJ.out || rc=5
+./dvi2tty -A -Eu -w100 -o ptex1Eu.out $test_src/ptex1.dvi && diff $test_out/ptex1Eu.tty ptex1Eu.out || rc=34
+./dvi2tty -J -Eu -w100 -o ptex1EuJ.out $test_src/ptex1.dvi  && diff $test_out/ptex1Eu.tty ptex1EuJ.out || rc=35
 
-./dvi2tty -U -Eu -w100 -o uptex1.out $test_src/uptex1.dvi && diff $test_out/uptex1.tty uptex1.out || rc=6
-./dvi2tty -J -Eu -w100 -o uptex1J.out $test_src/uptex1.dvi && diff $test_out/uptex1.tty uptex1J.out || rc=7
-
-## LANG=ja_JP.eucjp ./dvi2tty -A -Es -w100 $test_src/ptex1.dvi > ptex1Ee1.out && diff $test_out/ptex1Ee.tty ptex1Ee1.out || rc=3
-## LANG=ja_JP.sjis ./dvi2tty -A -Es -w100 $test_src/ptex1.dvi > ptex1Es1.out && diff $test_out/ptex1Es.tty ptex1Es1.out || rc=3
+./dvi2tty -U -Eu -w100 -o uptex1.out $test_src/uptex1.dvi && diff $test_out/uptex1.tty uptex1.out || rc=36
+./dvi2tty -J -Eu -w100 -o uptex1J.out $test_src/uptex1.dvi && diff $test_out/uptex1.tty uptex1J.out || rc=37
 
 
 ## different position of FNTDEF and NOP
-./dvi2tty $test_src/fntdef0.dvi >fntdef0.out && diff $test_out/fntdef0.tty fntdef0.out || rc=1
-./dvi2tty $test_src/fntdef1.dvi >fntdef1.out && diff $test_out/fntdef0.tty fntdef1.out || rc=2
-./dvi2tty $test_src/fntdef2.dvi >fntdef2.out && diff $test_out/fntdef0.tty fntdef2.out || rc=3
-./dvi2tty $test_src/fntdef3.dvi >fntdef3.out && diff $test_out/fntdef0.tty fntdef3.out || rc=4
-
-./dvi2tty -p3 $test_src/fntdef0.dvi >fntdef0p3.out && diff $test_out/fntdef0p3.tty fntdef0p3.out || rc=5
-./dvi2tty -p3 $test_src/fntdef1.dvi >fntdef1p3.out && diff $test_out/fntdef0p3.tty fntdef1p3.out || rc=6
-./dvi2tty -p3 $test_src/fntdef2.dvi >fntdef2p3.out && diff $test_out/fntdef0p3.tty fntdef2p3.out || rc=7
-./dvi2tty -p3 $test_src/fntdef3.dvi >fntdef3p3.out && diff $test_out/fntdef0p3.tty fntdef3p3.out || rc=8
+./dvi2tty $test_src/fntdef0.dvi >fntdef0.out && diff $test_out/fntdef0.tty fntdef0.out || rc=41
+./dvi2tty $test_src/fntdef1.dvi >fntdef1.out && diff $test_out/fntdef0.tty fntdef1.out || rc=42
+./dvi2tty $test_src/fntdef2.dvi >fntdef2.out && diff $test_out/fntdef0.tty fntdef2.out || rc=43
+./dvi2tty $test_src/fntdef3.dvi >fntdef3.out && diff $test_out/fntdef0.tty fntdef3.out || rc=44
 
 
 exit $rc
