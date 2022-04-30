@@ -762,8 +762,9 @@ void usage(int uerr)
     fprintf(stderr, " -h       This help message.\n");
     fprintf(stderr, "\n If you like this code and want to support is feel free\n to donate at Paypal marcel@mesa.nl. Thanks.\n\n");
 
-
-    exit(uerr);
+    if (uerr != ign)
+       exit(uerr);
+    exit(0);
 
 } /* usage */
 
