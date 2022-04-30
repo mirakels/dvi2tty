@@ -3,7 +3,9 @@
 /*   disdvi  ---  disassembles TeX dvi files.                                */
 /*                                                                           */
 /*                                                                           */
-/*   2.26 23oct2010  TexLivel    support pTex and XeTex                      */
+/*   2.27 30apr2022  TexLive     support multibyte output for SET[23]        */
+/*                               in pTeX dvi with PTEXENC library            */
+/*   2.26 23oct2010  TexLive     support pTeX and XeTeX                      */
 /*   2.25 23jan2003  M.J.E. Mol  fixed bug in copying font name (name[i])    */
 /*   2.24 27may96 M.J.E. Mol     A few typecasts added                       */
 /*   2.23 23jul95 M.J.E. Mol     Cleanups from duz@roxi.ez.fht-mannheim.de   */
@@ -39,7 +41,7 @@
  *
  */
 
-const char *disdvi = "@(#) disdvi.c  2.26 20101027 M.J.E. Mol (c) 1989-2010, marcel@mesa.nl";
+const char *disdvi = "@(#) disdvi.c  2.27 20220501 M.J.E. Mol (c) 1989-2010, marcel@mesa.nl";
 
 /*
  * Include files
@@ -733,12 +735,17 @@ void usage(void)
     fprintf(stderr, "Usage: %s [-h | [-p] [dvi_file[.dvi]]\n", progname);
 #endif
     fprintf(stderr, "              | -x [xdv_file[.xdv]]]\n");
+    fprintf(stderr, "Options:\n");
 #if defined(PTEXENC)
     fprintf(stderr, "   -p     Support ASCII pTeX dvi\n");
     fprintf(stderr, "   -u     Support upTeX dvi\n");
     fprintf(stderr, "   -x     Support XeTeX xdv\n");
-    fprintf(stderr, "   -Eenc  Output multibyte encoding. Suboption enc denotes u:UTF8 e:EUC-JP s:Shift_JIS j:JIS\n");
+    fprintf(stderr, "   -Eenc  Output multibyte encoding. The enc argument denotes u:UTF8 e:EUC-JP s:Shift_JIS j:JIS\n");
+#else
+    fprintf(stderr, "   -p     Support ASCII pTeX dvi\n");
+    fprintf(stderr, "   -x     Support XeTeX xdv\n");
 #endif
+    fprintf(stderr, "   -h     This help message.\n");
     fprintf(stderr, "\n If you like this code and want to support is feel free\n to donate at Paypal marcel@mesa.nl. Thanks.\n\n");
 
 

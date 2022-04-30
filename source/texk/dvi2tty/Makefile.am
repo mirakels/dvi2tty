@@ -59,11 +59,20 @@ AM_TESTS_ENVIRONMENT = DVI2TTY_TREE=$(DVI2TTY_TREE); export DVI2TTY_TREE;
 EXTRA_DIST += $(TESTS)
 
 ## disdvi.test
-EXTRA_DIST += ligtest.dis
+EXTRA_DIST += output/ligtest.dis
+EXTRA_DIST += output/ptex1.dis output/uptex1.dis output/ptex2Eu.dis output/uptex2Eu.dis
 DISTCLEANFILES = ligtest.dout
+DISTCLEANFILES += ptex1.dis uptex1.dis ptex2Eu.dis uptex2Eu.dis
 ## dvi2tty.test
-EXTRA_DIST += ligtest.tty test.tty testc.tty tests.tty testu.tty
-EXTRA_DIST += fntdef0.tty
-DISTCLEANFILES += ligtest.out test.out testc.out tests.out testu.out
-DISTCLEANFILES += table.out tablec.out tables.out tableu.out tableuC.out
-DISTCLEANFILES += tableEu.out tableEu1.out tableEuC.out tableEua.out
+EXTRA_DIST += output/test.tty output/testc.tty output/tests.tty output/testu.tty output/testEu.tty
+EXTRA_DIST += output/ligtest.tty output/ligtestu.tty output/ligtestEu.tty
+EXTRA_DIST += output/table.tty output/tablec.tty output/tables.tty output/tableu.tty output/tableuC.tty \
+	output/tableEu.tty output/tableEu1.tty output/tableEuC.tty output/tableEua.tty
+EXTRA_DIST += output/ptex1Eu.tty output/uptex1.tty output/fntdef0.tty
+DISTCLEANFILES += test.out testc.out tests.out testu.out testEu.out
+DISTCLEANFILES += ligtest.out ligtestu.out ligtestEu.out
+DISTCLEANFILES += table.out tablec.out tables.out tableu.out tableuC.out \
+	tableEu.out tableEu1.out tableEuC.out tableEua.out
+DISTCLEANFILES += ptex1Eu.out ptex1EuJ.out uptex1.out uptex1J.out
+DISTCLEANFILES += fntdef0.out fntdef1.out fntdef2.out fntdef3.out
+

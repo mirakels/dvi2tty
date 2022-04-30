@@ -18,8 +18,6 @@
  *
  */
 
-#define VERSION "6.0.0"
-
 #define Progname "dvi2tty"
 #define Copyright "Copyright (C) 1984, 1985, 1986 Svante Lindahl.\n\
 Copyright (C) 1989-2010 M.J.E. Mol, MESA Consulting B.V."

@@ -22,6 +22,7 @@
  * Include files 
  */
 
+#include "c-auto.h"
 #include "dvi2tty.h"
 
 #if defined(WIN32) && defined(KPATHSEA)
@@ -74,7 +75,7 @@
  * Variable definitions
  */
 
-const char *dvi2tty = "@(#) dvi2tty.c " VERSION " 20160305 M.J.E. Mol (c) 1989-2010, and contributors (c) -2016";
+const char *dvi2tty = "@(#) dvi2tty.c " VERSION " 20220501 M.J.E. Mol (c) 1989-2010, and contributors (c) -2022";
 
 
 printlisttype * currentpage;    /* current page to print                     */
